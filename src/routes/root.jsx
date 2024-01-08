@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 function Root() {
     return (
-        <div className="flex flex-col justify-center" data-theme='autumn'>
+        <div className="flex flex-col justify-center">
             <Navbar />
             <div>
                 <Outlet />
