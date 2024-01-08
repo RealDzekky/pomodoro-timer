@@ -9,7 +9,6 @@ function Root() {
             <div>
                 <Outlet />
             </div>
-            <Footer />
         </div>
     );
 }
