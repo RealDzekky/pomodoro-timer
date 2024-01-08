@@ -7,6 +7,7 @@ import Error from "./routes/Error";
 import Home from "./routes/Home";
 import Timer from "./components/Timer";
 
+// Set the initial path to "/home"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,7 +24,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+], {
+  initialEntries: ["/home"],
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
