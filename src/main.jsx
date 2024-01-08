@@ -1,35 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Route, Routes, createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
 import Error from "./routes/Error";
 import Home from "./routes/Home";
 import Timer from "./components/Timer";
 
-// Set the initial path to "/home"
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <Error />,
-    children: [
-      {
-        path: "/home",
-        element: <Home />
-      },
-      {
-        path: "/timer",
-        element: <Timer />,
-      },
-    ],
-  },
-], {
-  initialEntries: ["/home"],
-});
+export default function App(){
+  return(
+<BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Root />}>
+          <Route index element={<Home />} />
+          <Route path="timer" element={<Timer />} />
+          <Route path="*" element={<Error />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
