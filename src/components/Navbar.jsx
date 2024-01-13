@@ -1,14 +1,24 @@
 import { useEffect, useState } from "react";
+import useSound from "use-sound";
+
+import click from '../sounds/sound1.mp3';
 
 function Navbar(){
   const storedTheme = localStorage.getItem("theme");
   const [theme, setTheme] = useState(storedTheme || 'autumn');
+
+
+  const [playActive] = useSound(
+    click,
+    { volume: 0.5 }
+  );
 
   const handleTheme = () => {
     const newTheme = theme === 'autumn' ? 'dracula' : 'autumn';
     setTheme(newTheme);
     // Store the theme in local storage
     localStorage.setItem("theme", newTheme);
+    playActive()
   }
 
   useEffect(() => {

@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import useSound from "use-sound";
+import click from '../sounds/sound2.mp3';
 
 function Timer(){
   const [workDuration, setWorkDuration] = useState(25 * 60); // 25 minutes in seconds
@@ -8,6 +10,12 @@ function Timer(){
   const [pomodoroCount, setPomodoroCount] = useState(0); // Initialize the Pomodoro count
 
   const [seconds, setSeconds] = useState(workDuration);
+
+  const [playActive] = useSound(
+    click,
+    { volume: 0.5 }
+  );
+
 
   useEffect(() => {
     let timer;
@@ -40,12 +48,14 @@ function Timer(){
 
   function startTimer() {
     setIsRunning((prevState) => !prevState);
+    playActive();
   }
 
   function resetTimer() {
     setIsRunning(false);
     setIsWorking(true);
     setSeconds(workDuration);
+    playActive();
   }
 
   return (
