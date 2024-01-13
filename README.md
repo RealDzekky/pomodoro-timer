@@ -1,7 +1,24 @@
-# Tauri + React
+# Pomodoro-Timer
+---
+Simple pomodoro-Timer desktop application. An Easy tool for optimizing your time while working.
 
-This template should help get you started developing with Tauri and React in Vite.
 
-## Recommended IDE Setup
+## Technologies 
+---
+#### Frontend
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+* [React](https://react.dev/)
+* [tailwindcss](https://tailwindcss.com/)
+* [daisyUI](https://daisyui.com/)
+* [Tauri](https://rust.facepunch.com/)
+
+#### Backend
+
+* [Rust](https://www.rust-lang.org/)
+
+## Usage
+---
+
+#### Installation
+Just head to the **Releases** and download the latest _**tauri.exe**_ file! 
+
